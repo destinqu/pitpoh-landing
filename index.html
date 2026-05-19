@@ -541,7 +541,7 @@ function calcBMI() {
     }
 
     result.className = "bmi-result " + cls;
-    catEl.innerHTML = "<span class=cn>" + cnCat + "</span><span class=u>" + ruCat + "</span>";
+    catEl.innerHTML = "<span class='cn'>" + cnCat + "</span><span class='ru'>" + ruCat + "</span>";
 
     // Update info text
     let cnInfo = "", ruInfo = "";
@@ -549,7 +549,7 @@ function calcBMI() {
     else if (bmi < 25) { cnInfo = "体重正常，继续保持！"; ruInfo = "Вес в норме, так держать!"; }
     else if (bmi < 30) { cnInfo = "建议关注饮食和运动"; ruInfo = "Рекомендуется следить за питанием"; }
     else { cnInfo = "建议咨询专业营养师"; ruInfo = "Рекомендуется консультация специалиста"; }
-    infoEl.innerHTML = "<span class=cn>" + cnInfo + "</span><span class=u>" + ruInfo + "</span>";
+    infoEl.innerHTML = "<span class='cn'>" + cnInfo + "</span><span class='ru'>" + ruInfo + "</span>";
 }
 
 switchLang('ru');
