@@ -4,555 +4,331 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>PitPoh · Здоровое питание и снижение веса</title>
-<meta name="description" content="Здоровое питание · Научное снижение веса · Без голода, без жестких диет · Планы питания">
+<meta name="description" content="Здоровое питание · Научное снижение веса · Без голода, без жестких диет">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-:root{--green-50:#f0faf0;--green-100:#d8f0d8;--green-200:#b0e0b0;--green-300:#80c880;--green-400:#50a850;--green-500:#3a8a3a;--green-600:#2d6e2d;--green-700:#205220;--teal-50:#ecf7f5;--teal-100:#c8ebe6;--teal-200:#94d9cf;--teal-300:#5cc0b3;--teal-400:#3aa89a;--teal-500:#2a8c7e;--warm-50:#fef9f4;--warm-100:#fdf0e0;--gray-50:#f8faf8;--gray-100:#f0f2f0;--gray-300:#b8beb8;--gray-500:#6a726a;--gray-700:#3a403a;--gray-900:#1a1e1a;--radius-sm:12px;--radius-md:20px;--radius-lg:28px;--shadow-sm:0 2px 12px rgba(42,140,126,.06);--shadow-md:0 8px 32px rgba(42,140,126,.1);--shadow-lg:0 20px 60px rgba(42,140,126,.12)}
+:root{--g50:#f0faf0;--g100:#d8f0d8;--g200:#b0e0b0;--g300:#80c880;--g400:#50a850;--g500:#3a8a3a;--g600:#2d6e2d;--g700:#205220;--t50:#ecf7f5;--t100:#c8ebe6;--t200:#94d9cf;--t300:#5cc0b3;--t400:#3aa89a;--t500:#2a8c7e;--w50:#fef9f4;--gy50:#f8faf8;--gy100:#f0f2f0;--gy300:#b8beb8;--gy500:#6a726a;--gy700:#3a403a;--gy900:#1a1e1a;--rs:12px;--rm:20px;--rl:28px;--ss:0 2px 12px rgba(42,140,126,.06);--sm:0 8px 32px rgba(42,140,126,.1)}
 html{scroll-behavior:smooth}
-body{font-family:Inter,Noto Sans SC,-apple-system,BlinkMacSystemFont,sans-serif;background:var(--gray-50);color:var(--gray-900);line-height:1.8;-webkit-font-smoothing:antialiased}
-.cn{display:none}.ru{display:block}
-.lang-toggle{position:fixed;top:20px;right:20px;z-index:1000;display:flex;gap:6px;background:rgba(255,255,255,.93);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);padding:6px;border-radius:100px;box-shadow:0 4px 24px rgba(0,0,0,.08);border:1px solid rgba(0,0,0,.05)}
-.lang-btn{padding:8px 16px;border:none;border-radius:100px;font-size:.8em;font-weight:500;cursor:pointer;transition:all .3s ease;font-family:inherit;background:transparent;color:var(--gray-500)}
-.lang-btn.active{background:var(--green-500);color:#fff;box-shadow:0 2px 8px rgba(58,138,58,.25)}
-.lang-btn:hover:not(.active){color:var(--gray-900);background:rgba(0,0,0,.04)}
-section{padding:100px 24px}.container{max-width:1024px;margin:0 auto}
-.section-label{font-size:.75em;color:var(--teal-400);letter-spacing:4px;text-transform:uppercase;margin-bottom:10px;font-weight:500}
-.section-title{font-size:2em;font-weight:600;color:var(--gray-900);margin-bottom:14px;letter-spacing:-.5px}
-.section-desc{font-size:1em;color:var(--gray-500);max-width:640px;margin-bottom:50px;font-weight:300}
-.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:40px 24px 60px;background:linear-gradient(135deg,var(--green-50) 0%,#eef9f5 40%,var(--warm-50) 100%);position:relative;overflow:hidden}
-.hero-bg{position:absolute;inset:0;overflow:hidden}.hero-bg img{width:100%;height:100%;object-fit:cover;opacity:.04;filter:saturate(.3)}
-.hero-bg-overlay{position:absolute;inset:0;background:radial-gradient(ellipse at 30% 40%,rgba(92,192,179,.08) 0%,transparent 60%),radial-gradient(ellipse at 70% 60%,rgba(128,200,128,.06) 0%,transparent 60%)}
-.hero-content{position:relative;z-index:2}
-.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(42,140,126,.08);border:1px solid rgba(42,140,126,.15);padding:8px 20px;border-radius:100px;font-size:.85em;color:var(--teal-400);margin-bottom:32px;letter-spacing:1px}
-.hero-logo{font-size:3.5em;font-weight:700;color:var(--green-600);letter-spacing:6px;margin-bottom:16px}
-.hero-logo .sub{font-size:.35em;font-weight:300;color:var(--gray-500);display:block;letter-spacing:8px;margin-top:4px}
-.hero-tagline{font-size:1.3em;color:var(--gray-700);max-width:560px;margin:20px auto 40px;font-weight:300;line-height:1.8}
-.hero-actions{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
-.hero-decoration{display:flex;justify-content:center;gap:14px;margin-bottom:28px;flex-wrap:wrap}
-.hero-decoration span{font-size:2.2em;line-height:1}
-.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 36px;border-radius:100px;text-decoration:none;font-weight:500;font-size:.95em;transition:all .3s ease;font-family:inherit}
-.btn-primary{background:var(--green-500);color:#fff;box-shadow:0 4px 16px rgba(58,138,58,.2)}
-.btn-primary:hover{background:var(--green-600);transform:translateY(-2px);box-shadow:0 8px 24px rgba(58,138,58,.3)}
-.btn-outline{background:#fff;color:var(--green-600);border:1.5px solid var(--green-200)}
-.btn-outline:hover{border-color:var(--green-400);background:var(--green-50);transform:translateY(-2px)}
-.scroll-hint{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;color:var(--gray-300);font-size:.75em;animation:bounce 2.5s infinite;z-index:2;cursor:default}
-@keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(10px)}}
-.scroll-hint .arrow{width:2px;height:20px;background:linear-gradient(180deg,var(--gray-300),transparent)}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
-@media(max-width:800px){.about-grid{grid-template-columns:1fr;gap:28px}}
-.about-card{background:#fff;border-radius:var(--radius-md);overflow:hidden;border:1px solid var(--gray-100);transition:all .3s ease;box-shadow:var(--shadow-sm)}
-.about-card:hover{box-shadow:var(--shadow-md);transform:translateY(-3px)}
-.about-card .card-img{width:100%;height:200px;object-fit:cover;display:block}
-.about-card .card-body{padding:28px 28px 32px}
-.about-card .card-body .card-icon{font-size:1.6em;margin-bottom:10px;display:block}
-.about-card .card-body h3{font-size:1.15em;font-weight:600;color:var(--gray-900);margin-bottom:8px}
-.about-card .card-body p{color:var(--gray-500);font-weight:300;font-size:.9em}
-#philosophy{background:linear-gradient(180deg,var(--green-50) 0%,#fff 100%);position:relative}
+body{font-family:Inter,'Noto Sans SC',-apple-system,sans-serif;background:var(--gy50);color:var(--gy900);line-height:1.8;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+.sec{padding:90px 24px}.ct{max-width:1024px;margin:0 auto}
+.sl{font-size:.75em;color:var(--t400);letter-spacing:4px;text-transform:uppercase;margin-bottom:10px;font-weight:500}
+.st{font-size:2em;font-weight:600;color:var(--gy900);margin-bottom:14px;letter-spacing:-.5px}
+.sd{font-size:1em;color:var(--gy500);max-width:640px;margin:0 auto 50px;font-weight:300;text-align:center}
+.lt{position:fixed;top:20px;right:20px;z-index:9999;display:flex;gap:6px;background:rgba(255,255,255,.93);backdrop-filter:blur(12px);padding:6px;border-radius:100px;box-shadow:0 4px 24px rgba(0,0,0,.08);border:1px solid rgba(0,0,0,.05)}
+.lb{padding:8px 16px;border:none;border-radius:100px;font-size:.8em;font-weight:500;cursor:pointer;font-family:inherit;background:transparent;color:var(--gy500);transition:all .3s}
+.lb.act{background:var(--g500);color:#fff;box-shadow:0 2px 8px rgba(58,138,58,.25)}
+.lb:hover:not(.act){color:var(--gy900);background:rgba(0,0,0,.04)}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:40px 24px 60px;background:linear-gradient(135deg,var(--g50),#eef9f5 40%,var(--w50));position:relative}
+.hbg{position:absolute;inset:0;overflow:hidden}
+.hbg img{width:100%;height:100%;object-fit:cover;opacity:.04;filter:saturate(.3)}
+.hbo{position:absolute;inset:0;background:radial-gradient(ellipse at 30% 40%,rgba(92,192,179,.08),transparent 60%),radial-gradient(ellipse at 70% 60%,rgba(128,200,128,.06),transparent 60%)}
+.hc{position:relative;z-index:2}
+.hb{display:inline-flex;align-items:center;gap:8px;background:rgba(42,140,126,.08);border:1px solid rgba(42,140,126,.15);padding:8px 20px;border-radius:100px;font-size:.85em;color:var(--t400);margin-bottom:32px;letter-spacing:1px}
+.hl{font-size:3.5em;font-weight:700;color:var(--g600);letter-spacing:6px;margin-bottom:16px}
+.hl .hs{font-size:.35em;font-weight:300;color:var(--gy500);display:block;letter-spacing:8px;margin-top:4px}
+.ht{font-size:1.3em;color:var(--gy700);max-width:560px;margin:20px auto 40px;font-weight:300;line-height:1.8}
+.ha{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+.hd{display:flex;justify-content:center;gap:14px;margin-bottom:28px;flex-wrap:wrap}
+.hd span{font-size:2.2em;line-height:1}
+.sh{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;color:var(--gy300);font-size:.75em;animation:bo 2.5s infinite;z-index:2}
+@keyframes bo{0%,100%{transform:translateX(-50%)}50%{transform:translateX(-50%) translateY(10px)}}
+.sh .sa{width:2px;height:20px;background:linear-gradient(180deg,var(--gy300),transparent)}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.ng{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.card{background:#fff;border-radius:var(--rm);overflow:hidden;border:1px solid var(--gy100);box-shadow:var(--ss);transition:all .3s}
+.card:hover{box-shadow:var(--sm);transform:translateY(-3px)}
+.cim{width:100%;height:200px;object-fit:cover}
+.cb{padding:28px;text-align:center}
+.cb h3{font-size:1.1em;font-weight:600;color:var(--gy900);margin-bottom:8px}
+.cb p{color:var(--gy500);font-weight:300;font-size:.9em}
+.ci{font-size:1.6em;margin-bottom:10px;display:block}
+.ccim{width:100%;height:160px;object-fit:cover}
+.ccb{padding:16px;text-align:center}
+.ccb .cci{font-size:1.4em;display:block;margin-bottom:4px}
+.ccb h4{font-size:.92em;font-weight:500;color:var(--gy700)}
+.rcim{width:100%;height:200px;object-fit:cover}
+.rcb{padding:24px;text-align:center}
+.rcb .rci{font-size:1.4em;display:block;margin-bottom:4px}
+.rcb h3{font-size:1.05em;font-weight:600;color:var(--gy900);margin-bottom:6px}
+.rcm{display:flex;gap:16px;justify-content:center;margin:10px 0 6px;font-size:.78em;color:var(--gy500);flex-wrap:wrap}
+#philosophy{background:linear-gradient(180deg,var(--g50),#fff);position:relative}
 #philosophy::before{content:"";position:absolute;top:0;left:0;right:0;height:300px;background:linear-gradient(180deg,rgba(92,192,179,.04),transparent)}
-.philosophy-banner{position:relative;height:200px;border-radius:var(--radius-md);overflow:hidden;margin-bottom:48px;box-shadow:var(--shadow-sm)}
-.philosophy-banner img{width:100%;height:100%;object-fit:cover;filter:brightness(.7) saturate(.8)}
-.philosophy-banner .banner-text{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;color:#fff;text-align:center;padding:20px}
-.philosophy-banner .banner-text h2{font-size:1.6em;font-weight:500;letter-spacing:2px;margin-bottom:6px}
-.philosophy-banner .banner-text p{font-size:.9em;opacity:.8;font-weight:300}
-.principles{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;position:relative}
-@media(max-width:800px){.principles{grid-template-columns:1fr}}
-.principle{text-align:center;padding:40px 28px 36px;background:#fff;border-radius:var(--radius-md);box-shadow:var(--shadow-sm);transition:all .3s ease}
-.principle:hover{transform:translateY(-5px);box-shadow:var(--shadow-md)}
-.principle .emoji{font-size:2.8em;margin-bottom:14px;display:block}
-.principle h4{font-size:1.1em;font-weight:600;color:var(--green-700);margin-bottom:8px}
-.principle p{font-size:.88em;color:var(--gray-500);font-weight:300;line-height:1.6}
-#nutrients{background:#fff}
-.nutrient-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-@media(max-width:800px){.nutrient-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:500px){.nutrient-grid{grid-template-columns:1fr}}
-.nutrient-card{background:var(--green-50);border-radius:var(--radius-md);padding:32px 24px 28px;text-align:center;border:1px solid var(--green-100);transition:all .3s ease;box-shadow:var(--shadow-sm)}
-.nutrient-card:hover{box-shadow:var(--shadow-md);transform:translateY(-4px)}
-.nutrient-card .nu-icon{font-size:3em;margin-bottom:12px;display:block}
-.nutrient-card h4{font-size:1.1em;font-weight:600;color:var(--green-700);margin-bottom:8px}
-.nutrient-card p{font-size:.85em;color:var(--gray-500);font-weight:300;line-height:1.6;margin-bottom:8px}
-.nutrient-card .food-sources{font-size:.78em;color:var(--teal-400);font-weight:400;background:rgba(42,140,126,.08);border-radius:100px;padding:4px 14px;display:inline-block;margin-top:4px}
-#content{background:var(--gray-50);padding-bottom:80px}
-.content-showcase{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
-@media(max-width:800px){.content-showcase{grid-template-columns:repeat(2,1fr)}}
-.content-card{padding:0;border-radius:var(--radius-sm);overflow:hidden;border:1px solid var(--gray-100);transition:all .3s ease;box-shadow:var(--shadow-sm);background:#fff}
-.content-card:hover{box-shadow:var(--shadow-md);transform:translateY(-3px)}
-.content-card img{width:100%;height:160px;object-fit:cover;display:block}
-.content-card .card-foot{padding:16px 18px 20px;text-align:center}
-.content-card .card-foot .card-icon{font-size:1.4em;display:block;margin-bottom:4px}
-.content-card .card-foot h4{font-size:.92em;font-weight:500;color:var(--gray-700)}
-#bmi{background:var(--teal-50)}
-.bmi-card{max-width:520px;margin:0 auto;background:#fff;border-radius:var(--radius-lg);padding:40px 36px;box-shadow:var(--shadow-md);border:1px solid var(--gray-100)}
-.bmi-row{display:flex;gap:16px;margin-bottom:18px;flex-wrap:wrap}
-.bmi-field{flex:1;min-width:140px}
-.bmi-field label{display:block;font-size:.82em;color:var(--gray-500);margin-bottom:6px;font-weight:500}
-.bmi-field input{width:100%;padding:12px 16px;border:1.5px solid var(--gray-100);border-radius:var(--radius-sm);font-size:1em;font-family:inherit;transition:border-color .3s;outline:none;background:var(--gray-50)}
-.bmi-field input:focus{border-color:var(--teal-300);background:#fff}
-.bmi-calc-btn{width:100%;padding:14px;border:none;border-radius:var(--radius-sm);background:var(--green-400);color:#fff;font-size:1em;font-weight:500;font-family:inherit;cursor:pointer;transition:all .3s ease;margin-top:4px}
-.bmi-calc-btn:hover{background:var(--green-500);transform:translateY(-2px);box-shadow:0 4px 16px rgba(58,138,58,.2)}
-.bmi-result{margin-top:24px;padding:20px 24px;border-radius:var(--radius-sm);text-align:center;display:none}
-.bmi-result .bmi-value{font-size:2.2em;font-weight:700;line-height:1.2}
-.bmi-result .bmi-category{font-size:1.1em;font-weight:500;margin-top:4px}
-.bmi-result .bmi-info{font-size:.85em;color:var(--gray-500);margin-top:8px;font-weight:300}
-.bmi-result.underweight{background:#d4edda;display:block}
-.bmi-result.underweight .bmi-value{color:#155724}
-.bmi-result.normal{background:#d4edda;display:block}
-.bmi-result.normal .bmi-value{color:#155724}
-.bmi-result.overweight{background:#fff3cd;display:block}
-.bmi-result.overweight .bmi-value{color:#856404}
-.bmi-result.obese{background:#f8d7da;display:block}
-.bmi-result.obese .bmi-value{color:#721c24}
-#recipes{background:#fff}
-.recipe-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
-@media(max-width:800px){.recipe-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:500px){.recipe-grid{grid-template-columns:1fr}}
-.recipe-card{background:#fff;border-radius:var(--radius-md);overflow:hidden;border:1px solid var(--gray-100);transition:all .3s ease;box-shadow:var(--shadow-sm)}
-.recipe-card:hover{box-shadow:var(--shadow-md);transform:translateY(-4px)}
-.recipe-card img{width:100%;height:200px;object-fit:cover;display:block}
-.recipe-card .recipe-body{padding:20px 22px 24px}
-.recipe-card .recipe-body .recipe-icon{font-size:1.4em;display:block;margin-bottom:4px}
-.recipe-card .recipe-body h4{font-size:1.05em;font-weight:600;color:var(--gray-900);margin-bottom:6px}
-.recipe-card .recipe-body p{font-size:.84em;color:var(--gray-500);font-weight:300;line-height:1.6}
-.recipe-card .recipe-meta{display:flex;gap:16px;margin-top:10px;font-size:.78em;color:var(--gray-500);font-weight:400;flex-wrap:wrap}
-.recipe-card .recipe-meta span{display:flex;align-items:center;gap:4px}
-.recipe-card .recipe-meta .cal-icon{color:var(--green-400);font-weight:600}
-#channels{background:linear-gradient(135deg,var(--teal-50) 0%,#fff 50%,var(--green-50) 100%)}
-.channel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-@media(max-width:800px){.channel-grid{grid-template-columns:1fr}}
-.channel-card{background:#fff;border-radius:var(--radius-md);padding:40px 28px 32px;text-align:center;box-shadow:var(--shadow-sm);border:1px solid var(--gray-100);transition:all .3s ease}
-.channel-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
-.channel-card .platform-icon{font-size:2.8em;margin-bottom:14px;display:block}
-.channel-card h3{font-size:1.1em;font-weight:600;color:var(--gray-900);margin-bottom:6px}
-.channel-card p{font-size:.88em;color:var(--gray-500);margin-bottom:20px;font-weight:300}
-.channel-link{display:inline-flex;align-items:center;gap:6px;padding:10px 24px;border-radius:100px;text-decoration:none;font-size:.88em;font-weight:500;transition:all .3s ease;font-family:inherit}
-.channel-link.telegram{background:#e1ebfa;color:#1a6ed8}
-.channel-link.telegram:hover{background:#d0dff5}
-.channel-link.xiaohongshu{background:#fce8ec;color:#d8405a}
-.channel-link.xiaohongshu:hover{background:#fcd4dc}
-.channel-link.vk{background:#e2eaf8;color:#4a6fa8}
-.channel-link.vk:hover{background:#d0ddf4}
-#cta{background:var(--gray-900);color:#fff;text-align:center;padding:80px 24px}
-#cta .section-title{color:#fff}
-#cta .section-desc{color:rgba(255,255,255,.5);margin:0 auto 40px}
-.btn-cta{display:inline-flex;align-items:center;gap:10px;padding:18px 48px;border-radius:100px;background:var(--green-400);color:#fff;text-decoration:none;font-weight:500;font-size:1.05em;transition:all .3s ease;font-family:inherit}
-.btn-cta:hover{background:var(--green-500);transform:translateY(-2px);box-shadow:0 8px 24px rgba(92,192,179,.3)}
-footer{background:var(--gray-900);border-top:1px solid rgba(255,255,255,.04);text-align:center;padding:32px 24px;color:var(--gray-500);font-size:.82em;font-weight:300;line-height:2}
-footer a{color:var(--teal-300);text-decoration:none;transition:color .3s}
-footer a:hover{color:var(--teal-200)}
-.fade-up{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
-.fade-up.visible{opacity:1;transform:translateY(0)}
-@media(max-width:600px){.hero-logo{font-size:2.4em;letter-spacing:4px}.hero-logo .sub{font-size:.4em}.hero-tagline{font-size:1.05em}.section-title{font-size:1.5em}section{padding:60px 20px}.lang-toggle{top:12px;right:12px;padding:4px}.lang-btn{padding:6px 12px;font-size:.72em}.hero-decoration span{font-size:1.6em}.bmi-card{padding:28px 20px}.bmi-row{flex-direction:column;gap:12px}.bmi-field{min-width:auto}}
+.pb{position:relative;height:200px;border-radius:var(--rm);overflow:hidden;margin-bottom:48px;box-shadow:var(--ss)}
+.pb img{width:100%;height:100%;object-fit:cover;filter:brightness(.7) saturate(.8)}
+.pbt{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;color:#fff;text-align:center;padding:20px}
+.pbt h2{font-size:1.6em;font-weight:500;letter-spacing:2px;margin-bottom:6px}
+.pbt p{font-size:.9em;opacity:.8;font-weight:300}
+.pr{text-align:center;padding:40px 28px 36px;background:#fff;border-radius:var(--rm);box-shadow:var(--ss);transition:all .3s}
+.pr:hover{transform:translateY(-5px);box-shadow:var(--sm)}
+.pr .pe{font-size:2.8em;margin-bottom:14px;display:block}
+.pr h4{font-size:1.1em;font-weight:600;color:var(--g700);margin-bottom:8px}
+.pr p{font-size:.88em;color:var(--gy500);font-weight:300}
+.nuc{text-align:center;padding:32px 20px;background:#fff;border-radius:var(--rm);box-shadow:var(--ss);border:1px solid var(--gy100);transition:all .3s}
+.nuc:hover{transform:translateY(-4px);box-shadow:var(--sm)}
+.nuc .ni{font-size:3em;margin-bottom:12px;display:block}
+.nuc h4{font-size:1.05em;font-weight:600;color:var(--g700);margin-bottom:6px}
+.nuc p{font-size:.85em;color:var(--gy500);font-weight:300;line-height:1.5}
+.nuc .fs{font-size:.75em;color:var(--t400);font-weight:400;display:inline-block;margin-top:6px;background:rgba(42,140,126,.08);border-radius:100px;padding:3px 12px}
+#channels{background:linear-gradient(135deg,var(--t50),#fff 50%,var(--g50))}
+.chc{background:#fff;border-radius:var(--rm);padding:40px 28px 32px;text-align:center;box-shadow:var(--ss);border:1px solid var(--gy100);transition:all .3s}
+.chc:hover{transform:translateY(-4px);box-shadow:var(--sm)}
+.chc .pi{font-size:2.8em;margin-bottom:14px;display:block}
+.chc h3{font-size:1.1em;font-weight:600;color:var(--gy900);margin-bottom:6px}
+.chc p{font-size:.88em;color:var(--gy500);margin-bottom:20px;font-weight:300}
+.cl{padding:10px 24px;border-radius:100px;text-decoration:none;font-size:.88em;font-weight:500;font-family:inherit;transition:all .3s;display:inline-block}
+.cl.tg{background:#e1ebfa;color:#1a6ed8}
+.cl.tg:hover{background:#d0dff5}
+.cl.xhs{background:#fce8ec;color:#d8405a}
+.cl.xhs:hover{background:#fcd4dc}
+.cl.vk{background:#e2eaf8;color:#4a6fa8}
+.cl.vk:hover{background:#d0ddf4}
+#cta{background:var(--gy900);color:#fff;text-align:center;padding:80px 24px}
+#cta .st{color:#fff}
+#cta .sd{color:rgba(255,255,255,.5)}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 36px;border-radius:100px;text-decoration:none;font-weight:500;font-size:.95em;font-family:inherit;transition:all .3s}
+.btn-p{background:var(--g500);color:#fff;box-shadow:0 4px 16px rgba(58,138,58,.2)}
+.btn-p:hover{background:var(--g600);transform:translateY(-2px);box-shadow:0 8px 24px rgba(58,138,58,.3)}
+.btn-o{background:#fff;color:var(--g600);border:1.5px solid var(--g200)}
+.btn-o:hover{border-color:var(--g400);background:var(--g50);transform:translateY(-2px)}
+.btn-cta{display:inline-flex;align-items:center;gap:10px;padding:18px 48px;border-radius:100px;background:var(--g400);color:#fff;text-decoration:none;font-weight:500;font-size:1.05em;font-family:inherit;transition:all .3s}
+.btn-cta:hover{background:var(--g500);transform:translateY(-2px);box-shadow:0 8px 24px rgba(92,192,179,.3)}
+.bmib{background:#fff;border-radius:var(--rm);padding:40px;box-shadow:var(--ss);border:1px solid var(--gy100);max-width:480px;margin:0 auto}
+.bmir{display:flex;gap:16px;margin-bottom:18px;flex-wrap:wrap}
+.bmif{flex:1;min-width:160px}
+.bmif label{display:block;font-size:.82em;color:var(--gy500);margin-bottom:6px;font-weight:500}
+.bmif input{width:100%;padding:12px 16px;border:2px solid var(--gy100);border-radius:var(--rs);font-size:1em;font-family:inherit;outline:none;transition:border-color .3s}
+.bmif input:focus{border-color:var(--g400)}
+.bmibtn{width:100%;padding:14px;border:none;border-radius:var(--rs);background:var(--g500);color:#fff;font-size:1em;font-weight:500;font-family:inherit;cursor:pointer;transition:all .3s}
+.bmibtn:hover{background:var(--g600)}
+.bmirr{margin-top:24px;padding:20px 24px;border-radius:var(--rs);text-align:center;display:none}
+.bmirr.uw{display:block;background:#d4edda}
+.bmirr.n{display:block;background:#d4edda}
+.bmirr.ow{display:block;background:#fff3cd}
+.bmirr.ob{display:block;background:#f8d7da}
+.bmiv{font-size:2em;font-weight:700;color:var(--gy900)}
+.bmic{font-size:1.1em;margin-top:6px;font-weight:500}
+.bmii{font-size:.85em;color:var(--gy500);margin-top:4px}
+#content{background:#fff;padding-bottom:80px}
+.fu{opacity:0;transform:translateY(30px);transition:opacity .7s,transform .7s}
+.fu.vis{opacity:1;transform:translateY(0)}
+footer{background:var(--gy900);border-top:1px solid rgba(255,255,255,.04);text-align:center;padding:32px 24px;color:var(--gy500);font-size:.82em;font-weight:300;line-height:2}
+footer a{color:var(--t300);text-decoration:none}
+footer a:hover{color:var(--t200)}
+.cn{display:none}
+@media(max-width:800px){
+  .g2,.g3,.g4,.ng{grid-template-columns:1fr}
+  .bmir{flex-direction:column}
+  .hl{font-size:2.4em;letter-spacing:4px}
+  .hl .hs{font-size:.4em}
+  .ht{font-size:1.05em}
+  .st{font-size:1.5em}
+  .sec{padding:60px 20px}
+  .lt{top:12px;right:12px;padding:4px}
+  .lb{padding:6px 12px;font-size:.72em}
+  .hd span{font-size:1.6em}
+}
 </style>
 </head>
 <body>
-<div class="lang-toggle">
-    <button class="lang-btn" onclick="switchLang('cn')" id="langCn">🇨🇳 中文</button>
-    <button class="lang-btn active" onclick="switchLang('ru')" id="langRu">🇷🇺 Русский</button>
-</div>
+<div class="lt"><button class="lb" onclick="sw('cn')" id="lc">🇨🇳 中文</button><button class="lb act" onclick="sw('ru')" id="lr">🇷🇺 Русский</button></div>
+
 <!-- HERO -->
 <header class="hero">
-    <div class="hero-bg">
-        <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=1600&h=900&fit=crop" alt="" loading="lazy">
-        <div class="hero-bg-overlay"></div>
+  <div class="hbg"><img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=1600&h=900&fit=crop" alt="" loading="lazy"><div class="hbo"></div></div>
+  <div class="hc">
+    <div class="hb"><span>🌱</span><span class="ru">Научный подход к похудению</span><span class="cn">科学减脂 · 从这里开始</span></div>
+    <div class="hd"><span>🥗</span><span>🥑</span><span>🥩</span><span>🥚</span><span>🍓</span></div>
+    <div class="hl">PitPoh<span class="hs"><span class="ru">Здоровое питание и снижение веса</span><span class="cn">营养膳食与科学减脂</span></span></div>
+    <p class="ht"><span class="ru">Не голодайте · Не сидите на экстремальных диетах<br>Узнайте, как питаться вкусно и худеть с наукой</span><span class="cn">不挨饿 · 不极端节食 · 了解营养膳食知识<br>教你吃肉蛋奶也能轻松瘦</span></p>
+    <div class="ha">
+      <a href="#channels" class="btn btn-p"><span class="ru">📱 Подписаться</span><span class="cn">📱 关注频道</span></a>
+      <a href="#about" class="btn btn-o"><span class="ru">Узнать больше</span><span class="cn">了解更多</span></a>
     </div>
-    <div class="hero-content">
-        <div class="hero-badge">
-            <span>🌱</span>
-            <span class="cn">科学减脂 · 从这里开始</span>
-            <span class="ru">Научный подход к похудению</span>
-        </div>
-        <div class="hero-decoration">
-            <span>🥗</span><span>🥑</span><span>🥩</span><span>🥚</span><span>🍓</span>
-        </div>
-        <div class="hero-logo">
-            PitPoh
-            <span class="sub">
-                <span class="cn">营养膳食与科学减脂</span>
-                <span class="ru">Здоровое питание и снижение веса</span>
-            </span>
-        </div>
-        <p class="hero-tagline">
-            <span class="cn">不挨饿 · 不极端节食 · 了解营养膳食知识<br>教你吃肉蛋奶也能轻松瘦</span>
-            <span class="ru">Не голодайте · Не сидите на экстремальных диетах<br>Узнайте, как питаться вкусно и худеть с наукой</span>
-        </p>
-        <div class="hero-actions">
-            <a href="#channels" class="btn btn-primary"><span class="cn">📱 关注频道</span><span class="ru">📱 Подписаться</span></a>
-            <a href="#about" class="btn btn-outline"><span class="cn">了解更多</span><span class="ru">Узнать больше</span></a>
-        </div>
-    </div>
-    <div class="scroll-hint">
-        <span class="cn">向下滚动</span>
-        <span class="ru">Листайте вниз</span>
-        <div class="arrow"></div>
-    </div>
+  </div>
+  <div class="sh"><span class="ru">Листайте вниз</span><span class="cn">向下滚动</span><div class="sa"></div></div>
 </header>
+
 <!-- ABOUT -->
-<section id="about">
-    <div class="container">
-        <div class="fade-up" style="text-align:center">
-            <div class="section-label"><span class="cn">About</span><span class="ru">О нас</span></div>
-            <h2 class="section-title"><span class="cn">关于 PitPoh</span><span class="ru">О проекте PitPoh</span></h2>
-            <p class="section-desc" style="margin:0 auto 50px">
-                <span class="cn">PitPoh 是一个专注于营养膳食与科学健康减肥的内容频道。我们同步更新于小红书、Telegram 和 VK，覆盖中文与俄语受众。</span>
-                <span class="ru">PitPoh — это канал о здоровом питании и научном подходе к снижению веса. Контент публикуется на китайском и русском языках синхронно на Xiaohongshu, Telegram и VK.</span>
-            </p>
-        </div>
-        <div class="about-grid">
-            <div class="about-card fade-up">
-                <img class="card-img" src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600&h=400&fit=crop" alt="" loading="lazy">
-                <div class="card-body">
-                    <span class="card-icon">🥗</span>
-                    <h3><span class="cn">三餐搭配</span><span class="ru">Планы питания</span></h3>
-                    <p><span class="cn">科学合理的早中晚餐搭配方案，让你吃得饱、吃得好、还能瘦。</span><span class="ru">Научно обоснованные рационы на завтрак, обед и ужин. Вы будете сыты, довольны и похудеете.</span></p>
-                </div>
-            </div>
-            <div class="about-card fade-up">
-                <img class="card-img" src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=600&h=400&fit=crop" alt="" loading="lazy">
-                <div class="card-body">
-                    <span class="card-icon">📊</span>
-                    <h3><span class="cn">食材热量</span><span class="ru">Калорийность продуктов</span></h3>
-                    <p><span class="cn">常见食材热量数据库，教你看懂营养标签，掌握科学配比。</span><span class="ru">База данных калорийности. Учитесь читать этикетки и составлять сбалансированный рацион.</span></p>
-                </div>
-            </div>
-            <div class="about-card fade-up">
-                <img class="card-img" src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&h=400&fit=crop" alt="" loading="lazy">
-                <div class="card-body">
-                    <span class="card-icon">🎯</span>
-                    <h3><span class="cn">减脂干货</span><span class="ru">Советы по снижению веса</span></h3>
-                    <p><span class="cn">科学减脂方法论，破除减肥谣言，每个阶段的实用指南。</span><span class="ru">Разбор мифов о диетах, метаболизм, дефицит калорий — всё для устойчивого результата.</span></p>
-                </div>
-            </div>
-            <div class="about-card fade-up">
-                <img class="card-img" src="https://images.unsplash.com/photo-1466637574441-749b8f19452f?w=600&h=400&fit=crop" alt="" loading="lazy">
-                <div class="card-body">
-                    <span class="card-icon">🌍</span>
-                    <h3><span class="cn">多平台同步</span><span class="ru">Все платформы</span></h3>
-                    <p><span class="cn">内容通过小红书、Telegram、VK 同步发布，选你常用的平台。</span><span class="ru">Контент на Xiaohongshu, Telegram и VK. Выбирайте свою площадку.</span></p>
-                </div>
-            </div>
-        </div>
+<section id="about" class="sec" style="background:#fff">
+  <div class="ct">
+    <div class="fu" style="text-align:center">
+      <div class="sl"><span class="ru">О нас</span><span class="cn">About</span></div>
+      <h2 class="st"><span class="ru">О проекте PitPoh</span><span class="cn">关于 PitPoh</span></h2>
+      <p class="sd"><span class="ru">PitPoh — канал о здоровом питании и научном снижении веса. Контент на Xiaohongshu, Telegram и VK.</span><span class="cn">PitPoh 专注于营养膳食与科学健康减肥，同步更新于小红书、Telegram 和 VK。</span></p>
     </div>
+    <div class="g2">
+      <div class="card fu"><img class="cim" src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600&h=400&fit=crop" alt="" loading="lazy"><div class="cb"><span class="ci">🥗</span><h3><span class="ru">Планы питания</span><span class="cn">三餐搭配</span></h3><p><span class="ru">Научно обоснованные рационы на завтрак, обед и ужин.</span><span class="cn">科学合理的早中晚餐搭配方案。</span></p></div></div>
+      <div class="card fu"><img class="cim" src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=600&h=400&fit=crop" alt="" loading="lazy"><div class="cb"><span class="ci">📊</span><h3><span class="ru">Калорийность</span><span class="cn">食材热量</span></h3><p><span class="ru">База данных калорийности для сбалансированного рациона.</span><span class="cn">常见食材热量数据库，掌握科学配比。</span></p></div></div>
+      <div class="card fu"><img class="cim" src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&h=400&fit=crop" alt="" loading="lazy"><div class="cb"><span class="ci">🎯</span><h3><span class="ru">Советы</span><span class="cn">减脂干货</span></h3><p><span class="ru">Разбор мифов, метаболизм, дефицит калорий.</span><span class="cn">科学减脂方法论，破除减肥谣言。</span></p></div></div>
+      <div class="card fu"><img class="cim" src="https://images.unsplash.com/photo-1466637574441-749b8f19452f?w=600&h=400&fit=crop" alt="" loading="lazy"><div class="cb"><span class="ci">🌍</span><h3><span class="ru">Все платформы</span><span class="cn">多平台同步</span></h3><p><span class="ru">Контент на Xiaohongshu, Telegram и VK.</span><span class="cn">内容通过小红书、Telegram、VK 同步发布。</span></p></div></div>
+    </div>
+  </div>
 </section>
+
 <!-- PHILOSOPHY -->
-<section id="philosophy">
-    <div class="container">
-        <div class="philosophy-banner fade-up">
-            <img src="https://images.unsplash.com/photo-1511690656952-34342bb7c2f1?w=1024&h=400&fit=crop" alt="" loading="lazy">
-            <div class="banner-text">
-                <h2><span class="cn">🥬 不节食。好好吃。慢慢瘦。</span><span class="ru">🥬 Не голодайте. Ешьте. Худейте.</span></h2>
-                <p><span class="cn">不是魔法，是科学的饮食方式和生活习惯。</span><span class="ru">Наука — это правильные привычки на каждый день.</span></p>
-            </div>
-        </div>
-        <div class="principles">
-            <div class="principle fade-up">
-                <span class="emoji">🥩</span>
-                <h4><span class="cn">好好吃饭</span><span class="ru">Ешьте настоящую еду</span></h4>
-                <p><span class="cn">不吃代餐、不极端断食。肉蛋奶蔬菜水果才是最好的「减脂餐」。</span><span class="ru">Никаких заменителей. Мясо, яйца, овощи, фрукты — вот лучшая диета.</span></p>
-            </div>
-            <div class="principle fade-up">
-                <span class="emoji">🧠</span>
-                <h4><span class="cn">知其所以然</span><span class="ru">Понимайте почему</span></h4>
-                <p><span class="cn">我们教的是方法，不是公式。灵活搭配，终身受用。</span><span class="ru">Мы учим принципам. Вы сможете составлять рацион сами.</span></p>
-            </div>
-            <div class="principle fade-up">
-                <span class="emoji">🐢</span>
-                <h4><span class="cn">慢慢变瘦</span><span class="ru">Худейте медленно</span></h4>
-                <p><span class="cn">安全可持续 — 每周 0.5-1kg。稳才是目标，不反弹。</span><span class="ru">Безопасная скорость 0.5-1 кг в неделю. Без срывов и возврата веса.</span></p>
-            </div>
-        </div>
+<section id="philosophy" class="sec">
+  <div class="ct">
+    <div class="pb fu"><img src="https://images.unsplash.com/photo-1511690656952-34342bb7c2f1?w=1024&h=400&fit=crop" alt="" loading="lazy"><div class="pbt"><h2><span class="ru">🥬 Не голодайте. Ешьте. Худейте.</span><span class="cn">🥬 不节食。好好吃。慢慢瘦。</span></h2><p><span class="ru">Наука — это правильные привычки на каждый день.</span><span class="cn">不是魔法，是科学的饮食方式和生活习惯。</span></p></div></div>
+    <div class="g3">
+      <div class="pr fu"><span class="pe">🥩</span><h4><span class="ru">Ешьте настоящую еду</span><span class="cn">好好吃饭</span></h4><p><span class="ru">Мясо, яйца, овощи — лучшая диета.</span><span class="cn">肉蛋奶蔬菜是最好的减脂餐。</span></p></div>
+      <div class="pr fu"><span class="pe">🧠</span><h4><span class="ru">Понимайте почему</span><span class="cn">知其所以然</span></h4><p><span class="ru">Мы учим принципам. Вы сможете сами.</span><span class="cn">我们教的是方法，灵活搭配终身受用。</span></p></div>
+      <div class="pr fu"><span class="pe">🐢</span><h4><span class="ru">Худейте медленно</span><span class="cn">慢慢变瘦</span></h4><p><span class="ru">0.5-1 кг в неделю. Без срывов.</span><span class="cn">每周0.5-1kg，稳才是目标不反弹。</span></p></div>
     </div>
+  </div>
 </section>
+
 <!-- NUTRIENTS -->
-<section id="nutrients">
-    <div class="container">
-        <div class="fade-up" style="text-align:center">
-            <div class="section-label"><span class="cn">Nutrients</span><span class="ru">Нутриенты</span></div>
-            <h2 class="section-title"><span class="cn">六大营养素</span><span class="ru">Шесть основных нутриентов</span></h2>
-            <p class="section-desc" style="margin:0 auto 50px"><span class="cn">了解这些营养素，才能科学搭配每一餐 🧬</span><span class="ru">Понимание нутриентов — ключ к сбалансированному питанию 🧬</span></p>
-        </div>
-        <div class="nutrient-grid">
-            <div class="nutrient-card fade-up">
-                <span class="nu-icon">🥩</span>
-                <h4><span class="cn">蛋白质</span><span class="ru">Белки</span></h4>
-                <p><span class="cn">肌肉修复与生长的关键。增加饱腹感，帮助维持肌肉量。</span><span class="ru">Ключ к восстановлению и росту мышц. Даёт сытость и сохраняет мышцы при похудении.</span></p>
-                <span class="food-sources"><span class="cn">🥚 鸡蛋 · 🐟 鱼肉 · 🥩 鸡胸 · 🧀 豆腐</span><span class="ru">🥚 Яйца · 🐟 Рыба · 🥩 Курица · 🧀 Тофу</span></span>
-            </div>
-            <div class="nutrient-card fade-up">
-                <span class="nu-icon">🧈</span>
-                <h4><span class="cn">脂肪</span><span class="ru">Жиры</span></h4>
-                <p><span class="cn">维持激素平衡和细胞健康。选择优质脂肪，而非无脂饮食。</span><span class="ru">Поддерживают гормоны и здоровье клеток. Выбирайте полезные жиры, не бойтесь их.</span></p>
-                <span class="food-sources"><span class="cn">🥑 牛油果 · 🥜 坚果 · 🫒 橄榄油 · 🐟 三文鱼</span><span class="ru">🥑 Авокадо · 🥜 Орехи · 🫒 Олив.масло · 🐟 Лосось</span></span>
-            </div>
-            <div class="nutrient-card fade-up">
-                <span class="nu-icon">🍚</span>
-                <h4><span class="cn">碳水化合物</span><span class="ru">Углеводы</span></h4>
-                <p><span class="cn">身体主要能量来源。选择复合碳水，提供持久能量。</span><span class="ru">Главный источник энергии. Выбирайте сложные углеводы для долгой сытости.</span></p>
-                <span class="food-sources"><span class="cn">🌾 燕麦 · 🍠 红薯 · 🍚 糙米 · 🌽 玉米</span><span class="ru">🌾 Овсянка · 🍠 Батат · 🍚 Рис · 🌽 Кукуруза</span></span>
-            </div>
-            <div class="nutrient-card fade-up">
-                <span class="nu-icon">🥕</span>
-                <h4><span class="cn">维生素</span><span class="ru">Витамины</span></h4>
-                <p><span class="cn">维持免疫系统和新陈代谢正常运作，缺一不可。</span><span class="ru">Поддерживают иммунитет и обмен веществ. Каждый витамин важен.</span></p>
-                <span class="food-sources"><span class="cn">🥦 西兰花 · 🥕 胡萝卜 · 🍊 柑橘 · 🫐 蓝莓</span><span class="ru">🥦 Брокколи · 🥕 Морковь · 🍊 Цитрусы · 🫐 Черника</span></span>
-            </div>
-            <div class="nutrient-card fade-up">
-                <span class="nu-icon">🧂</span>
-                <h4><span class="cn">矿物质</span><span class="ru">Минералы</span></h4>
-                <p><span class="cn">调节体液平衡、神经传导和骨骼健康。</span><span class="ru">Регулируют водный баланс, нервную систему и здоровье костей.</span></p>
-                <span class="food-sources"><span class="cn">🥬 菠菜 · 🥛 牛奶 · 🥜 坚果 · 🐚 海产品</span><span class="ru">🥬 Шпинат · 🥛 Молоко · 🥜 Орехи · 🐚 Морепродукты</span></span>
-            </div>
-            <div class="nutrient-card fade-up">
-                <span class="nu-icon">💧</span>
-                <h4><span class="cn">水</span><span class="ru">Вода</span></h4>
-                <p><span class="cn">生命的源泉。促进代谢，帮助脂肪燃烧，每天8杯。</span><span class="ru">Источник жизни. Ускоряет метаболизм и помогает сжигать жир. Пейте 8 стаканов.</span></p>
-                <span class="food-sources"><span class="cn">💧 白水 · 🍵 茶水 · 🥒 黄瓜 · 🍉 西瓜</span><span class="ru">💧 Вода · 🍵 Чай · 🥒 Огурец · 🍉 Арбуз</span></span>
-            </div>
-        </div>
+<section id="nutrients" class="sec" style="background:#fff">
+  <div class="ct">
+    <div class="fu" style="text-align:center">
+      <div class="sl"><span class="ru">Нутриенты</span><span class="cn">Nutrients</span></div>
+      <h2 class="st"><span class="ru">6 основных питательных веществ</span><span class="cn">6大基本营养素</span></h2>
+      <p class="sd"><span class="ru">Сбалансированное питание — основа здоровья и снижения веса.</span><span class="cn">均衡营养是健康减脂的基础。</span></p>
     </div>
+    <div class="ng">
+      <div class="nuc fu"><span class="ni">🥩</span><h4><span class="ru">Белки</span><span class="cn">蛋白质</span></h4><p><span class="ru">Строительный материал мышц, ускоряет метаболизм.</span><span class="cn">肌肉的建筑材料，加速新陈代谢。</span><span class="fs"><span class="ru">🥩🍗🥚🐟</span><span class="cn">🥩鸡肉🥚鱼肉</span></span></p></div>
+      <div class="nuc fu"><span class="ni">🧈</span><h4><span class="ru">Жиры</span><span class="cn">脂肪</span></h4><p><span class="ru">Необходимы для гормонов и усвоения витаминов.</span><span class="cn">维持激素平衡，帮助维生素吸收。</span><span class="fs"><span class="ru">🥑🌰🫒🐟</span><span class="cn">🥑坚果橄榄油</span></span></p></div>
+      <div class="nuc fu"><span class="ni">🍚</span><h4><span class="ru">Углеводы</span><span class="cn">碳水化合物</span></h4><p><span class="ru">Главный источник энергии для организма.</span><span class="cn">身体最主要的能量来源。</span><span class="fs"><span class="ru">🍚🌾🍠🥦</span><span class="cn">🍚全麦🍠燕麦</span></span></p></div>
+      <div class="nuc fu"><span class="ni">🥕</span><h4><span class="ru">Витамины</span><span class="cn">维生素</span></h4><p><span class="ru">Регулируют обмен веществ, укрепляют иммунитет.</span><span class="cn">调节代谢，增强免疫力。</span><span class="fs"><span class="ru">🥕🍊🥦🍓</span><span class="cn">🥕橙子🥦草莓</span></span></p></div>
+      <div class="nuc fu"><span class="ni">🧂</span><h4><span class="ru">Минералы</span><span class="cn">矿物质</span></h4><p><span class="ru">Важны для костей, сердца и водного баланса.</span><span class="cn">维持骨骼、心脏和水分平衡。</span><span class="fs"><span class="ru">🥛🥬🥜🍌</span><span class="cn">🥛蔬菜坚果</span></span></p></div>
+      <div class="nuc fu"><span class="ni">💧</span><h4><span class="ru">Вода</span><span class="cn">水</span></h4><p><span class="ru">Ускоряет метаболизм, выводит токсины.</span><span class="cn">加速代谢，排出毒素。</span><span class="fs"><span class="ru">🚰 1.5-2 л в день</span><span class="cn">🚰 每天1.5-2升</span></span></p></div>
+    </div>
+  </div>
 </section>
+
 <!-- CONTENT -->
-<section id="content">
-    <div class="container">
-        <div class="fade-up" style="text-align:center">
-            <div class="section-label"><span class="cn">Content</span><span class="ru">Контент</span></div>
-            <h2 class="section-title"><span class="cn">内容类型</span><span class="ru">Что мы публикуем</span></h2>
-            <p class="section-desc" style="margin:0 auto 50px"><span class="cn">每日更新，总有你需要的。</span><span class="ru">Ежедневные обновления. Всегда есть что-то полезное.</span></p>
-        </div>
-        <div class="content-showcase">
-            <div class="content-card fade-up">
-                <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400&h=320&fit=crop" alt="" loading="lazy">
-                <div class="card-foot">
-                    <span class="card-icon">🍳</span>
-                    <h4><span class="cn">减脂餐搭配</span><span class="ru">Рецепты для похудения</span></h4>
-                </div>
-            </div>
-            <div class="content-card fade-up">
-                <img src="https://images.unsplash.com/photo-1550989460-0adf9ea622e2?w=400&h=320&fit=crop" alt="" loading="lazy">
-                <div class="card-foot">
-                    <span class="card-icon">📝</span>
-                    <h4><span class="cn">食材热量测评</span><span class="ru">Разбор продуктов</span></h4>
-                </div>
-            </div>
-            <div class="content-card fade-up">
-                <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400&h=320&fit=crop" alt="" loading="lazy">
-                <div class="card-foot">
-                    <span class="card-icon">💡</span>
-                    <h4><span class="cn">减脂干货科普</span><span class="ru">Научные советы</span></h4>
-                </div>
-            </div>
-            <div class="content-card fade-up">
-                <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=400&h=320&fit=crop" alt="" loading="lazy">
-                <div class="card-foot">
-                    <span class="card-icon">❓</span>
-                    <h4><span class="cn">常见误区解答</span><span class="ru">Ответы на вопросы</span></h4>
-                </div>
-            </div>
-        </div>
+<section id="content" class="sec">
+  <div class="ct">
+    <div class="fu" style="text-align:center">
+      <div class="sl"><span class="ru">Контент</span><span class="cn">Content</span></div>
+      <h2 class="st"><span class="ru">Что мы публикуем</span><span class="cn">内容类型</span></h2>
+      <p class="sd"><span class="ru">Ежедневные обновления</span><span class="cn">每日更新</span></p>
     </div>
-</section>
-<!-- BMI CALCULATOR -->
-<section id="bmi">
-    <div class="container">
-        <div class="fade-up" style="text-align:center">
-            <div class="section-label"><span class="cn">BMI</span><span class="ru">ИМТ</span></div>
-            <h2 class="section-title"><span class="cn">BMI 计算器</span><span class="ru">Калькулятор ИМТ</span></h2>
-            <p class="section-desc" style="margin:0 auto 50px"><span class="cn">输入你的身高和体重，了解你的体重指数 🏋️</span><span class="ru">Введите рост и вес, чтобы узнать ваш индекс массы тела 🏋️</span></p>
-        </div>
-        <div class="fade-up">
-            <div class="bmi-card">
-                <div class="bmi-row">
-                    <div class="bmi-field">
-                        <label><span class="cn">身高 (cm)</span><span class="ru">Рост (см)</span></label>
-                        <input type="number" id="bmiHeight" placeholder="eg. 170" min="50" max="300">
-                    </div>
-                    <div class="bmi-field">
-                        <label><span class="cn">体重 (kg)</span><span class="ru">Вес (кг)</span></label>
-                        <input type="number" id="bmiWeight" placeholder="eg. 70" min="10" max="500">
-                    </div>
-                </div>
-                <button class="bmi-calc-btn" onclick="calcBMI()"><span class="cn">📊 计算 BMI</span><span class="ru">📊 Рассчитать ИМТ</span></button>
-                <div id="bmiResult" class="bmi-result">
-                    <div class="bmi-value" id="bmiValue">—</div>
-                    <div class="bmi-category" id="bmiCategory"><span class="cn">—</span><span class="ru">—</span></div>
-                    <div class="bmi-info" id="bmiInfo"><span class="cn">正常 BMI 范围: 18.5 - 24.9</span><span class="ru">Нормальный ИМТ: 18.5 - 24.9</span></div>
-                </div>
-            </div>
-        </div>
+    <div class="g4">
+      <div class="card fu"><img class="ccim" src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400&h=320&fit=crop" alt="" loading="lazy"><div class="ccb"><span class="cci">🍳</span><h4><span class="ru">Рецепты</span><span class="cn">减脂餐搭配</span></h4></div></div>
+      <div class="card fu"><img class="ccim" src="https://images.unsplash.com/photo-1550989460-0adf9ea622e2?w=400&h=320&fit=crop" alt="" loading="lazy"><div class="ccb"><span class="cci">📝</span><h4><span class="ru">Обзоры продуктов</span><span class="cn">食材热量测评</span></h4></div></div>
+      <div class="card fu"><img class="ccim" src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400&h=320&fit=crop" alt="" loading="lazy"><div class="ccb"><span class="cci">💡</span><h4><span class="ru">Советы</span><span class="cn">减脂干货科普</span></h4></div></div>
+      <div class="card fu"><img class="ccim" src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=400&h=320&fit=crop" alt="" loading="lazy"><div class="ccb"><span class="cci">❓</span><h4><span class="ru">Ответы на вопросы</span><span class="cn">常见误区解答</span></h4></div></div>
     </div>
+  </div>
 </section>
+</body>
+</html><!-- BMI -->
+<section id="bmi" class="sec" style="background:#fff">
+  <div class="ct">
+    <div class="fu" style="text-align:center">
+      <div class="sl">BMI</div>
+      <h2 class="st"><span class="ru">Калькулятор ИМТ</span><span class="cn">BMI 计算器</span></h2>
+      <p class="sd"><span class="ru">Узнайте свой индекс массы тела</span><span class="cn">测算你的身体质量指数</span></p>
+    </div>
+    <div class="bmib fu">
+      <div class="bmir">
+        <div class="bmif"><label><span class="ru">Рост (см)</span><span class="cn">身高 (cm)</span></label><input type="number" id="bh" placeholder="170" min="50" max="300"></div>
+        <div class="bmif"><label><span class="ru">Вес (кг)</span><span class="cn">体重 (kg)</span></label><input type="number" id="bw" placeholder="70" min="10" max="500"></div>
+      </div>
+      <button class="bmibtn" onclick="calcBMI()"><span class="ru">📊 Рассчитать ИМТ</span><span class="cn">📊 计算 BMI</span></button>
+      <div id="br" class="bmirr">
+        <div class="bmiv" id="bv">—</div>
+        <div class="bmic" id="bc"><span class="ru">—</span><span class="cn">—</span></div>
+        <div class="bmii" id="bi"><span class="ru">Норма: 18.5 - 24.9</span><span class="cn">正常范围: 18.5 - 24.9</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- RECIPES -->
-<section id="recipes">
-    <div class="container">
-        <div class="fade-up" style="text-align:center">
-            <div class="section-label"><span class="cn">Recipes</span><span class="ru">Рецепты</span></div>
-            <h2 class="section-title"><span class="cn">减脂食谱推荐</span><span class="ru">Рецепты для похудения</span></h2>
-            <p class="section-desc" style="margin:0 auto 50px"><span class="cn">美味又健康的减脂餐，让你边吃边瘦 🍽️</span><span class="ru">Вкусные и полезные блюда, помогающие худеть 🍽️</span></p>
-        </div>
-        <div class="recipe-grid">
-            <div class="recipe-card fade-up">
-                <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&h=400&fit=crop" alt="" loading="lazy">
-                <div class="recipe-body">
-                    <span class="recipe-icon">🥗</span>
-                    <h4><span class="cn">牛油果鸡蛋沙拉</span><span class="ru">Салат с авокадо и яйцом</span></h4>
-                    <p><span class="cn">优质脂肪和蛋白质的完美组合。牛油果富含不饱和脂肪酸，搭配水煮蛋和生菜，清爽饱腹。</span><span class="ru">Идеальное сочетание полезных жиров и белка. Авокадо богат ненасыщенными жирными кислотами.</span></p>
-                    <div class="recipe-meta">
-                        <span>🔥 <span class="cal-icon"><span class="cn">~320 ккал</span><span class="ru">~320 ккал</span></span></span>
-                        <span>🥄 <span class="cn">🥑 牛油果 · 🥚 鸡蛋 · 🥬 生菜 · 🍋 柠檬</span><span class="ru">🥑 Авокадо · 🥚 Яйцо · 🥬 Салат · 🍋 Лимон</span></span>
-                    </div>
-                </div>
-            </div>
-            <div class="recipe-card fade-up">
-                <img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=600&h=400&fit=crop" alt="" loading="lazy">
-                <div class="recipe-body">
-                    <span class="recipe-icon">🐟</span>
-                    <h4><span class="cn">香煎三文鱼配芦笋</span><span class="ru">Лосось со спаржей</span></h4>
-                    <p><span class="cn">Omega-3 丰富的三文鱼搭配高纤维芦笋，简单调味，健康低卡。</span><span class="ru">Лосось с омега-3 и спаржа с высоким содержанием клетчатки. Просто, полезно, низкокалорийно.</span></p>
-                    <div class="recipe-meta">
-                        <span>🔥 <span class="cal-icon"><span class="cn">~380 ккал</span><span class="ru">~380 ккал</span></span></span>
-                        <span>🥄 <span class="cn">🐟 三文鱼 · 🥦 芦笋 · 🫒 橄榄油 · 🧂 海盐</span><span class="ru">🐟 Лосось · 🥦 Спаржа · 🫒 Олив.масло · 🧂 Соль</span></span>
-                    </div>
-                </div>
-            </div>
-            <div class="recipe-card fade-up">
-                <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600&h=400&fit=crop" alt="" loading="lazy">
-                <div class="recipe-body">
-                    <span class="recipe-icon">🥣</span>
-                    <h4><span class="cn">隔夜燕麦杯</span><span class="ru">Овсянка на ночь</span></h4>
-                    <p><span class="cn">提前一晚准备，早上即食。高纤维燕麦搭配酸奶和水果，低脂饱腹。</span><span class="ru">Готовьте с вечера и ешьте утром. Овсянка с йогуртом и фруктами — сытный низкокалорийный завтрак.</span></p>
-                    <div class="recipe-meta">
-                        <span>🔥 <span class="cal-icon"><span class="cn">~280 ккал</span><span class="ru">~280 ккал</span></span></span>
-                        <span>🥄 <span class="cn">🌾 燕麦 · 🥛 酸奶 · 🫐 蓝莓 · 🍌 香蕉</span><span class="ru">🌾 Овсянка · 🥛 Йогурт · 🫐 Черника · 🍌 Банан</span></span>
-                    </div>
-                </div>
-            </div>
-        </div>
+<section id="recipes" class="sec">
+  <div class="ct">
+    <div class="fu" style="text-align:center">
+      <div class="sl"><span class="ru">Рецепты</span><span class="cn">Recipes</span></div>
+      <h2 class="st"><span class="ru">Рецепты для похудения</span><span class="cn">减肥食谱推荐</span></h2>
+      <p class="sd"><span class="ru">Вкусно и полезно — легко приготовить дома</span><span class="cn">好吃不胖，在家轻松做</span></p>
     </div>
+    <div class="g3">
+      <div class="card fu"><img class="rcim" src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=500&h=400&fit=crop" alt="" loading="lazy"><div class="rcb"><span class="rci">🥗</span><h3><span class="ru">Салат с яйцом и авокадо</span><span class="cn">鸡蛋牛油果沙拉</span></h3><div class="rcm"><span><span class="ru">🔥 280 ккал</span><span class="cn">🔥 280 大卡</span></span><span><span class="ru">⏱ 10 мин</span><span class="cn">⏱ 10分钟</span></span></div><p style="font-size:.82em;color:var(--gy500);font-weight:300"><span class="ru">Яйцо, авокадо, помидоры, листовой салат, оливковое масло</span><span class="cn">鸡蛋、牛油果、番茄、生菜、橄榄油</span></p></div></div>
+      <div class="card fu"><img class="rcim" src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=500&h=400&fit=crop" alt="" loading="lazy"><div class="rcb"><span class="rci">🐟</span><h3><span class="ru">Лосось с овощами</span><span class="cn">三文鱼蔬菜碗</span></h3><div class="rcm"><span><span class="ru">🔥 350 ккал</span><span class="cn">🔥 350 大卡</span></span><span><span class="ru">⏱ 20 мин</span><span class="cn">⏱ 20分钟</span></span></div><p style="font-size:.82em;color:var(--gy500);font-weight:300"><span class="ru">Лосось, брокколи, киноа, спаржа</span><span class="cn">三文鱼、西兰花、藜麦、芦笋</span></p></div></div>
+      <div class="card fu"><img class="rcim" src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=500&h=400&fit=crop" alt="" loading="lazy"><div class="rcb"><span class="rci">🥣</span><h3><span class="ru">Греческий йогурт с ягодами</span><span class="cn">希腊酸奶水果碗</span></h3><div class="rcm"><span><span class="ru">🔥 200 ккал</span><span class="cn">🔥 200 大卡</span></span><span><span class="ru">⏱ 5 мин</span><span class="cn">⏱ 5分钟</span></span></div><p style="font-size:.82em;color:var(--gy500);font-weight:300"><span class="ru">Греческий йогурт, ягоды, гранола, мед</span><span class="cn">希腊酸奶、莓果、格兰诺拉、蜂蜜</span></p></div></div>
+    </div>
+  </div>
 </section>
+
 <!-- CHANNELS -->
-<section id="channels">
-    <div class="container">
-        <div class="fade-up" style="text-align:center">
-            <div class="section-label"><span class="cn">Follow Us</span><span class="ru">Подпишитесь</span></div>
-            <h2 class="section-title"><span class="cn">关注我们</span><span class="ru">Наши каналы</span></h2>
-            <p class="section-desc" style="margin:0 auto 50px"><span class="cn">选择你常用的平台，第一时间获取更新</span><span class="ru">Выберите удобную для вас площадку</span></p>
-        </div>
-        <div class="channel-grid">
-            <div class="channel-card fade-up">
-                <span class="platform-icon">📕</span>
-                <h3><span class="cn">小红书</span><span class="ru">Xiaohongshu</span></h3>
-                <p><span class="cn">中文内容 · 三餐实拍 · 食材测评</span><span class="ru">Контент на китайском · Рецепты · Обзоры</span></p>
-                <a href="https://xhslink.com/m/3vXLN67Dy02" target="_blank" rel="noopener" class="channel-link xiaohongshu"><span class="cn">前往 →</span><span class="ru">Перейти →</span></a>
-            </div>
-            <div class="channel-card fade-up">
-                <span class="platform-icon">✈️</span>
-                <h3>Telegram</h3>
-                <p><span class="cn">中俄双语 · 即时推送 · 群组讨论</span><span class="ru">Кит.+Рус. · Мгновенные уведомления</span></p>
-                <a href="https://t.me/PitPoh" target="_blank" rel="noopener" class="channel-link telegram"><span class="cn">加入 →</span><span class="ru">Подписаться →</span></a>
-            </div>
-            <div class="channel-card fade-up">
-                <span class="platform-icon">🇷🇺</span>
-                <h3>VK</h3>
-                <p><span class="cn">俄语内容 · 俄罗斯用户</span><span class="ru">Контент на русском для РФ</span></p>
-                <a href="https://vk.com/club238652146" target="_blank" rel="noopener" class="channel-link vk"><span class="cn">打开 →</span><span class="ru">Открыть →</span></a>
-            </div>
-        </div>
+<section id="channels" class="sec">
+  <div class="ct">
+    <div class="fu" style="text-align:center">
+      <div class="sl"><span class="ru">Подпишитесь</span><span class="cn">Follow Us</span></div>
+      <h2 class="st"><span class="ru">Наши каналы</span><span class="cn">关注我们</span></h2>
+      <p class="sd"><span class="ru">Выберите удобную площадку</span><span class="cn">选择你常用的平台</span></p>
     </div>
+    <div class="g3">
+      <div class="chc fu"><span class="pi">📕</span><h3><span class="ru">Xiaohongshu</span><span class="cn">小红书</span></h3><p><span class="ru">Контент на китайском</span><span class="cn">中文内容 · 三餐实拍</span></p><a href="https://xhslink.com/m/3vXLN67Dy02" target="_blank" rel="noopener" class="cl xhs"><span class="ru">Перейти →</span><span class="cn">前往 →</span></a></div>
+      <div class="chc fu"><span class="pi">✈️</span><h3>Telegram</h3><p><span class="ru">Кит.+Рус. · Мгновенные уведомления</span><span class="cn">中俄双语 · 即时推送</span></p><a href="https://t.me/PitPoh" target="_blank" rel="noopener" class="cl tg"><span class="ru">Подписаться →</span><span class="cn">加入 →</span></a></div>
+      <div class="chc fu"><span class="pi">🇷🇺</span><h3>VK</h3><p><span class="ru">Контент на русском</span><span class="cn">俄语内容</span></p><a href="https://vk.com/club238652146" target="_blank" rel="noopener" class="cl vk"><span class="ru">Открыть →</span><span class="cn">打开 →</span></a></div>
+    </div>
+  </div>
 </section>
+
 <!-- CTA -->
 <section id="cta">
-    <div class="fade-up">
-        <div class="section-label" style="color:var(--teal-300)"><span class="cn">Start Today</span><span class="ru">Начните сегодня</span></div>
-        <h2 class="section-title"><span class="cn">一起好好吃饭，慢慢变瘦 ✨</span><span class="ru">Ешьте вкусно и худейте ✨</span></h2>
-        <p class="section-desc"><span class="cn">不挨饿、不极端、科学减脂。从关注 PitPoh 开始。</span><span class="ru">Не голодайте. Не мучайте себя. Научный подход к снижению веса.</span></p>
-        <a href="https://t.me/PitPoh" target="_blank" rel="noopener" class="btn-cta"><span class="cn">📲 立即关注</span><span class="ru">📲 Подписаться</span></a>
-    </div>
+  <div class="fu">
+    <div class="sl" style="color:var(--t300)"><span class="ru">Начните сегодня</span><span class="cn">Start Today</span></div>
+    <h2 class="st"><span class="ru">Ешьте вкусно и худейте ✨</span><span class="cn">一起好好吃饭，慢慢变瘦 ✨</span></h2>
+    <p class="sd"><span class="ru">Не голодайте. Не мучайте себя. Научный подход.</span><span class="cn">不挨饿、不极端、科学减脂。从关注我们开始。</span></p>
+    <a href="https://t.me/PitPoh" target="_blank" rel="noopener" class="btn-cta"><span class="ru">📲 Подписаться</span><span class="cn">📲 立即关注</span></a>
+  </div>
 </section>
-<!-- FOOTER -->
+
 <footer>
-    <p>© 2026 PitPoh · <span class="cn">营养膳食与科学减脂</span><span class="ru">Здоровое питание и снижение веса</span></p>
-    <p style="margin-top:6px"><span class="cn">同步更新于</span><span class="ru">Синхронно на</span> <a href="https://xhslink.com/m/3vXLN67Dy02" target="_blank">Xiaohongshu</a> · <a href="https://t.me/PitPoh" target="_blank">Telegram</a> · <a href="https://vk.com/club238652146" target="_blank">VK</a></p>
+  <p>© 2026 PitPoh · <span class="ru">Здоровое питание и снижение веса</span><span class="cn">营养膳食与科学减脂</span></p>
+  <p style="margin-top:6px"><span class="ru">Синхронно на</span><span class="cn">同步更新于</span> <a href="https://xhslink.com/m/3vXLN67Dy02" target="_blank">Xiaohongshu</a> · <a href="https://t.me/PitPoh" target="_blank">Telegram</a> · <a href="https://vk.com/club238652146" target="_blank">VK</a></p>
 </footer>
+
 <script>
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-        if (e.isIntersecting) e.target.classList.add("visible");
-    });
-}, { threshold: 0.1 });
-document.querySelectorAll(".fade-up").forEach(el => observer.observe(el));
+var ob=new IntersectionObserver(function(e){e.forEach(function(e){if(e.isIntersecting)e.target.classList.add("vis")})},{threshold:0.1});
+document.querySelectorAll(".fu").forEach(function(e){ob.observe(e)});
 
-function switchLang(lang) {
-    const cn = document.querySelectorAll(".cn");
-    const ru = document.querySelectorAll(".ru");
-    if (lang === "cn") {
-        cn.forEach(e => e.style.display = "");
-        ru.forEach(e => e.style.display = "none");
-        document.getElementById("langCn").className = "lang-btn active";
-        document.getElementById("langRu").className = "lang-btn";
-    } else {
-        cn.forEach(e => e.style.display = "none");
-        ru.forEach(e => e.style.display = "");
-        document.getElementById("langCn").className = "lang-btn";
-        document.getElementById("langRu").className = "lang-btn active";
-    }
+function sw(l){
+  var cn=document.querySelectorAll(".cn");
+  var ru=document.querySelectorAll(".ru");
+  if(l==="cn"){
+    cn.forEach(function(e){e.style.display="inline"});
+    ru.forEach(function(e){e.style.display="none"});
+    document.getElementById("lc").className="lb act";
+    document.getElementById("lr").className="lb";
+  }else{
+    cn.forEach(function(e){e.style.display="none"});
+    ru.forEach(function(e){e.style.display="inline"});
+    document.getElementById("lc").className="lb";
+    document.getElementById("lr").className="lb act";
+  }
 }
 
-function calcBMI() {
-    const h = parseFloat(document.getElementById("bmiHeight").value);
-    const w = parseFloat(document.getElementById("bmiWeight").value);
-    const result = document.getElementById("bmiResult");
-    const valEl = document.getElementById("bmiValue");
-    const catEl = document.getElementById("bmiCategory");
-    const infoEl = document.getElementById("bmiInfo");
-
-    if (!h || !w || h < 50 || h > 300 || w < 10 || w > 500) {
-        alert("Please enter valid height (50-300 cm) and weight (10-500 kg)");
-        return;
-    }
-
-    const bmi = w / ((h / 100) * (h / 100));
-    const rounded = Math.round(bmi * 10) / 10;
-    valEl.textContent = rounded;
-
-    let category = "";
-    let cnCat = "";
-    let ruCat = "";
-    let cls = "";
-
-    if (bmi < 18.5) {
-        category = "Underweight";
-        cnCat = "偏瘦";
-        ruCat = "Недостаток веса";
-        cls = "underweight";
-    } else if (bmi < 25) {
-        category = "Normal";
-        cnCat = "正常";
-        ruCat = "Нормальный вес";
-        cls = "normal";
-    } else if (bmi < 30) {
-        category = "Overweight";
-        cnCat = "超重";
-        ruCat = "Избыток веса";
-        cls = "overweight";
-    } else {
-        category = "Obese";
-        cnCat = "肥胖";
-        ruCat = "Ожирение";
-        cls = "obese";
-    }
-
-    result.className = "bmi-result " + cls;
-    catEl.innerHTML = "<span class='cn'>" + cnCat + "</span><span class='ru'>" + ruCat + "</span>";
-
-    // Update info text
-    let cnInfo = "", ruInfo = "";
-    if (bmi < 18.5) { cnInfo = "建议适当增加营养摄入"; ruInfo = "Рекомендуется увеличить питание"; }
-    else if (bmi < 25) { cnInfo = "体重正常，继续保持！"; ruInfo = "Вес в норме, так держать!"; }
-    else if (bmi < 30) { cnInfo = "建议关注饮食和运动"; ruInfo = "Рекомендуется следить за питанием"; }
-    else { cnInfo = "建议咨询专业营养师"; ruInfo = "Рекомендуется консультация специалиста"; }
-    infoEl.innerHTML = "<span class='cn'>" + cnInfo + "</span><span class='ru'>" + ruInfo + "</span>";
+function calcBMI(){
+  var h=Number(document.getElementById("bh").value);
+  var w=Number(document.getElementById("bw").value);
+  if(!h||!w||h<50||h>300||w<10||w>500){
+    document.getElementById("br").style.display="none";
+    alert("Пожалуйста, введите корректные значения\\n请输入正确的数值");
+    return;
+  }
+  var bmi=w/((h/100)*(h/100));
+  bmi=Math.round(bmi*10)/10;
+  var cat="",cls="",ruCat="",cnCat="",ruInfo="",cnInfo="";
+  if(bmi<18.5){cat="underweight";cls="uw";ruCat="Недостаток веса";cnCat="偏瘦";ruInfo="Рекомендуется увеличить питание";cnInfo="建议适当增加营养摄入";}
+  else if(bmi<25){cat="normal";cls="n";ruCat="Нормальный вес";cnCat="正常";ruInfo="Вес в норме, так держать!";cnInfo="体重正常，继续保持！";}
+  else if(bmi<30){cat="overweight";cls="ow";ruCat="Избыток веса";cnCat="超重";ruInfo="Рекомендуется следить за питанием";cnInfo="建议关注饮食和运动";}
+  else{cat="obese";cls="ob";ruCat="Ожирение";cnCat="肥胖";ruInfo="Рекомендуется консультация специалиста";cnInfo="建议咨询专业营养师";}
+  document.getElementById("br").className="bmirr "+cls;
+  document.getElementById("bv").textContent=bmi;
+  document.getElementById("bc").innerHTML="<span class='ru'>"+ruCat+"</span><span class='cn'>"+cnCat+"</span>";
+  document.getElementById("bi").innerHTML="<span class='ru'>"+ruInfo+"</span><span class='cn'>"+cnInfo+"</span>";
 }
 
-switchLang('ru');
+sw("ru");
 </script>
 </body>
 </html>
