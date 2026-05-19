@@ -119,7 +119,7 @@ footer{background:var(--gy900);border-top:1px solid rgba(255,255,255,.04);text-a
 footer a{color:var(--t300);text-decoration:none}
 footer a:hover{color:var(--t200)}
 .cn{display:none}
-@media(max-width:800px){
+.cal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}.cal-cat{background:#fff;border-radius:var(--rm);border:1px solid var(--gy100);overflow:hidden;box-shadow:var(--ss)}.cal-cat-title{background:var(--g50);padding:14px 20px;font-weight:600;font-size:.88em;color:var(--g700)}.cal-item{display:flex;justify-content:space-between;padding:8px 20px;border-bottom:1px solid var(--gy100);font-size:.8em;color:var(--gy500)}.cal-item:last-child{border:none}.cal-val{font-weight:600;color:var(--g500);font-family:Inter,sans-serif}.rc-ing{font-size:.78em;color:var(--gy500);font-weight:300;padding:0 0 6px;line-height:1.6}.rc-ing b{color:var(--g500)}@media(max-width:800px){.cal-grid{grid-template-columns:1fr}}@media(max-width:800px){
   .g2,.g3,.g4,.ng{grid-template-columns:1fr}
   .bmir{flex-direction:column}
   .hl{font-size:2.4em;letter-spacing:4px}
@@ -249,14 +249,75 @@ footer a:hover{color:var(--t200)}
       <p class="sd"><span class="ru">Вкусно и полезно — легко приготовить дома</span><span class="cn">好吃不胖，在家轻松做</span></p>
     </div>
     <div class="g3">
-      <div class="card fu"><img class="rcim" src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=500&h=400&fit=crop" alt="" loading="lazy"><div class="rcb"><span class="rci">🥗</span><h3><span class="ru">Салат с яйцом и авокадо</span><span class="cn">鸡蛋牛油果沙拉</span></h3><div class="rcm"><span><span class="ru">🔥 280 ккал</span><span class="cn">🔥 280 大卡</span></span><span><span class="ru">⏱ 10 мин</span><span class="cn">⏱ 10分钟</span></span></div><div class="rc-steps"><div class="rc-step"><span class="cn"><b>①</b> 鸡蛋煮熟，切块</span><span class="ru"><b>①</b> Сварить яйца вкрутую, нарезать</span></div><div class="rc-step"><span class="cn"><b>②</b> 牛油果切丁，番茄切块</span><span class="ru"><b>②</b> Авокадо и помидоры нарезать кубиками</span></div><div class="rc-step"><span class="cn"><b>③</b> 生菜洗净撕碎，所有食材混合</span><span class="ru"><b>③</b> Салат порвать руками, смешать все</span></div><div class="rc-step"><span class="cn"><b>④</b> 淋橄榄油，撒盐和黑胡椒调味</span><span class="ru"><b>④</b> Заправить оливковым маслом, солью и перцем</span></div></div></div></div>
-      <div class="card fu"><img class="rcim" src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=500&h=400&fit=crop" alt="" loading="lazy"><div class="rcb"><span class="rci">🐟</span><h3><span class="ru">Лосось с овощами</span><span class="cn">三文鱼蔬菜碗</span></h3><div class="rcm"><span><span class="ru">🔥 350 ккал</span><span class="cn">🔥 350 大卡</span></span><span><span class="ru">⏱ 20 мин</span><span class="cn">⏱ 20分钟</span></span></div><div class="rc-steps"><div class="rc-step"><span class="cn"><b>①</b> 三文鱼抹盐和黑胡椒腌制5分钟</span><span class="ru"><b>①</b> Лосось посолить, поперчить, оставить на 5 мин</span></div><div class="rc-step"><span class="cn"><b>②</b> 西兰花和芦笋焯水1分钟</span><span class="ru"><b>②</b> Брокколи и спаржу бланшировать 1 мин</span></div><div class="rc-step"><span class="cn"><b>③</b> 平底锅少油，三文鱼两面各煎3分钟</span><span class="ru"><b>③</b> Лосось обжарить по 3 мин с каждой стороны</span></div><div class="rc-step"><span class="cn"><b>④</b> 藜麦煮熟垫底，放上三文鱼和蔬菜</span><span class="ru"><b>④</b> Киноа отварить, выложить с лососем и овощами</span></div></div></div></div>
-      <div class="card fu"><img class="rcim" src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=500&h=400&fit=crop" alt="" loading="lazy"><div class="rcb"><span class="rci">🥣</span><h3><span class="ru">Греческий йогурт с ягодами</span><span class="cn">希腊酸奶水果碗</span></h3><div class="rcm"><span><span class="ru">🔥 200 ккал</span><span class="cn">🔥 200 大卡</span></span><span><span class="ru">⏱ 5 мин</span><span class="cn">⏱ 5分钟</span></span></div><div class="rc-steps"><div class="rc-step"><span class="cn"><b>①</b> 碗底倒入希腊酸奶</span><span class="ru"><b>①</b> Выложить греческий йогурт в миску</span></div><div class="rc-step"><span class="cn"><b>②</b> 撒上洗净的蓝莓、草莓等水果</span><span class="ru"><b>②</b> Добавить свежие ягоды</span></div><div class="rc-step"><span class="cn"><b>③</b> 加一勺格兰诺拉麦片</span><span class="ru"><b>③</b> Посыпать гранолой</span></div><div class="rc-step"><span class="cn"><b>④</b> 淋少许蜂蜜即可享用</span><span class="ru"><b>④</b> Полить медом по вкусу</span></div></div></div></div>
+      <div class="card fu"><img class="rcim" src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=500&h=400&fit=crop" alt="" loading="lazy"><div class="rcb"><span class="rci">🥗</span><h3><span class="ru">Салат с яйцом и авокадо</span><span class="cn">鸡蛋牛油果沙拉</span></h3><div class="rcm"><span><span class="ru">🔥 280 ккал</span><span class="cn">🔥 280 大卡</span></span><span><span class="ru">⏱ 10 мин</span><span class="cn">⏱ 10分钟</span></span></div><div class="rc-ing"><span class="ru">🥚 Яйцо 100г (155 ккал/100г) · 🥑 Авокадо 80г (160) · 🍅 Помидоры 100г (18) · 🥬 Салат 50г (15) · 🫒 Масло оливковое 10г (884)</span><span class="cn">🥚 鸡蛋100g(155大卡/100g) · 🥑 牛油果80g(160) · 🍅 番茄100g(18) · 🥬 生菜50g(15) · 🫒 橄榄油10g(884)</span></div><div class="rc-steps"><div class="rc-step"><span class="cn"><b>①</b> 鸡蛋煮熟切块</span><span class="ru"><b>①</b> Сварить яйца вкрутую, нарезать</span></div><div class="rc-step"><span class="cn"><b>②</b> 牛油果切丁番茄切块</span><span class="ru"><b>②</b> Авокадо и помидоры нарезать</span></div><div class="rc-step"><span class="cn"><b>③</b> 生菜撕碎所有食材混合</span><span class="ru"><b>③</b> Салат порвать, смешать все</span></div><div class="rc-step"><span class="cn"><b>④</b> 淋橄榄油撒盐和黑胡椒调味</span><span class="ru"><b>④</b> Заправить маслом, солью и перцем</span></div></div></div></div>
+      <div class="card fu"><img class="rcim" src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=500&h=400&fit=crop" alt="" loading="lazy"><div class="rcb"><span class="rci">🐟</span><h3><span class="ru">Лосось с овощами</span><span class="cn">三文鱼蔬菜碗</span></h3><div class="rcm"><span><span class="ru">🔥 350 ккал</span><span class="cn">🔥 350 大卡</span></span><span><span class="ru">⏱ 20 мин</span><span class="cn">⏱ 20分钟</span></span></div><div class="rc-ing"><span class="ru">🐟 Лосось 120г (208 ккал/100г) · 🥦 Брокколи 100г (34) · 🌾 Киноа 50г (120) · 🌱 Спаржа 80г (20) · 🫒 Масло 5г (884)</span><span class="cn">🐟 三文鱼120g(208大卡/100g) · 🥦 西兰花100g(34) · 🌾 藜麦50g(120) · 🌱 芦笋80g(20) · 🫒 油5g(884)</span></div><div class="rc-steps"><div class="rc-step"><span class="cn"><b>①</b> 三文鱼抹盐和黑胡椒腌制5分钟</span><span class="ru"><b>①</b> Лосось посолить, поперчить на 5 мин</span></div><div class="rc-step"><span class="cn"><b>②</b> 西兰花芦笋焯水1分钟</span><span class="ru"><b>②</b> Брокколи и спаржу бланшировать</span></div><div class="rc-step"><span class="cn"><b>③</b> 少油两面各煎3分钟</span><span class="ru"><b>③</b> Лосось обжарить по 3 мин с каждой</span></div><div class="rc-step"><span class="cn"><b>④</b> 藜麦煮熟垫底放上三文鱼蔬菜</span><span class="ru"><b>④</b> Киноа отварить, выложить все</span></div></div></div></div>
+      <div class="card fu"><img class="rcim" src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=500&h=400&fit=crop" alt="" loading="lazy"><div class="rcb"><span class="rci">🥣</span><h3><span class="ru">Греческий йогурт с ягодами</span><span class="cn">希腊酸奶水果碗</span></h3><div class="rcm"><span><span class="ru">🔥 200 ккал</span><span class="cn">🔥 200 大卡</span></span><span><span class="ru">⏱ 5 мин</span><span class="cn">⏱ 5分钟</span></span></div><div class="rc-ing"><span class="ru">🥛 Йогурт греч. 150г (59 ккал/100г) · 🫐 Ягоды 80г (57) · 🌾 Гранола 20г (180) · 🍯 Мед 10г (304)</span><span class="cn">🥛 希腊酸奶150g(59大卡/100g) · 🫐 莓果80g(57) · 🌾 格兰诺拉20g(180) · 🍯 蜂蜜10g(304)</span></div><div class="rc-steps"><div class="rc-step"><span class="cn"><b>①</b> 碗底倒希腊酸奶</span><span class="ru"><b>①</b> Выложить йогурт в миску</span></div><div class="rc-step"><span class="cn"><b>②</b> 撒上洗净的蓝莓草莓</span><span class="ru"><b>②</b> Добавить свежие ягоды</span></div><div class="rc-step"><span class="cn"><b>③</b> 加一勺格兰诺拉</span><span class="ru"><b>③</b> Посыпать гранолой</span></div><div class="rc-step"><span class="cn"><b>④</b> 淋蜂蜜享用</span><span class="ru"><b>④</b> Полить медом</span></div></div></div></div>
     </div>
   </div>
 </section>
 
 <!-- CHANNELS -->
+
+<!-- CALORIE TABLE -->
+<section id="calories" class="sec" style="background:#fff">
+  <div class=ct>
+    <div class=fu style=text-align:center>
+      <div class=sl><span class=ru>Таблица калорий</span><span class=cn>Calorie Table</span></div>
+      <h2 class=st><span class=ru>Калорийность продуктов (ккал/100г)</span><span class=cn>常见食物热量表 (大卡/100g)</span></h2>
+      <p class=sd><span class=ru>Данные приблизительные, для справки</span><span class=cn>数据为参考值，实际视品种和部位略有差异</span></p>
+    </div>
+    <div class="cal-grid">
+      <div class="cal-cat"><div class="cal-cat-title"><span class=ru>🥩 Мясо и рыба</span><span class=cn>🥩 肉鱼蛋类</span></div>
+        <div class="cal-item"><span><span class=ru>Куриная грудка</span><span class=cn>鸡胸肉</span></span><span class="cal-val">133</span></div>
+        <div class="cal-item"><span><span class=ru>Говядина постная</span><span class=cn>瘦牛肉</span></span><span class="cal-val">250</span></div>
+        <div class="cal-item"><span><span class=ru>Свинина постная</span><span class=cn>瘦猪肉</span></span><span class="cal-val">242</span></div>
+        <div class="cal-item"><span><span class=ru>Лосось</span><span class=cn>三文鱼</span></span><span class="cal-val">208</span></div>
+        <div class="cal-item"><span><span class=ru>Яйцо (1 шт 50г)</span><span class=cn>鸡蛋(1个50g)</span></span><span class="cal-val">155</span></div>
+        <div class="cal-item"><span><span class=ru>Креветки</span><span class=cn>虾仁</span></span><span class="cal-val">93</span></div>
+      </div>
+      <div class="cal-cat"><div class="cal-cat-title"><span class=ru>🌾 Зерновые</span><span class=cn>🌾 谷物主食</span></div>
+        <div class="cal-item"><span><span class=ru>Рис белый вар.</span><span class=cn>白米饭</span></span><span class="cal-val">130</span></div>
+        <div class="cal-item"><span><span class=ru>Овсянка вар.</span><span class=cn>燕麦粥</span></span><span class="cal-val">71</span></div>
+        <div class="cal-item"><span><span class=ru>Киноа вар.</span><span class=cn>藜麦(熟)</span></span><span class="cal-val">120</span></div>
+        <div class="cal-item"><span><span class=ru>Хлеб цельноз.</span><span class=cn>全麦面包</span></span><span class="cal-val">247</span></div>
+        <div class="cal-item"><span><span class=ru>Макароны вар.</span><span class=cn>意面(熟)</span></span><span class="cal-val">131</span></div>
+        <div class="cal-item"><span><span class=ru>Батат</span><span class=cn>红薯</span></span><span class="cal-val">86</span></div>
+      </div>
+      <div class="cal-cat"><div class="cal-cat-title"><span class=ru>🥦 Овощи</span><span class=cn>🥦 蔬菜</span></div>
+        <div class="cal-item"><span><span class=ru>Брокколи</span><span class=cn>西兰花</span></span><span class="cal-val">34</span></div>
+        <div class="cal-item"><span><span class=ru>Помидоры</span><span class=cn>番茄</span></span><span class="cal-val">18</span></div>
+        <div class="cal-item"><span><span class=ru>Огурцы</span><span class=cn>黄瓜</span></span><span class="cal-val">15</span></div>
+        <div class="cal-item"><span><span class=ru>Лист. салат</span><span class=cn>生菜</span></span><span class="cal-val">15</span></div>
+        <div class="cal-item"><span><span class=ru>Шпинат</span><span class=cn>菠菜</span></span><span class="cal-val">23</span></div>
+        <div class="cal-item"><span><span class=ru>Капуста</span><span class=cn>卷心菜</span></span><span class="cal-val">25</span></div>
+      </div>
+      <div class="cal-cat"><div class="cal-cat-title"><span class=ru>🍎 Фрукты</span><span class=cn>🍎 水果</span></div>
+        <div class="cal-item"><span><span class=ru>Яблоко</span><span class=cn>苹果</span></span><span class="cal-val">52</span></div>
+        <div class="cal-item"><span><span class=ru>Авокадо</span><span class=cn>牛油果</span></span><span class="cal-val">160</span></div>
+        <div class="cal-item"><span><span class=ru>Банан</span><span class=cn>香蕉</span></span><span class="cal-val">89</span></div>
+        <div class="cal-item"><span><span class=ru>Клубника</span><span class=cn>草莓</span></span><span class="cal-val">32</span></div>
+        <div class="cal-item"><span><span class=ru>Черника</span><span class=cn>蓝莓</span></span><span class="cal-val">57</span></div>
+        <div class="cal-item"><span><span class=ru>Апельсин</span><span class=cn>橙子</span></span><span class="cal-val">47</span></div>
+      </div>
+      <div class="cal-cat"><div class="cal-cat-title"><span class=ru>🥛 Молочное</span><span class=cn>🥛 乳制品</span></div>
+        <div class="cal-item"><span><span class=ru>Молоко 2.5%</span><span class=cn>牛奶2.5%</span></span><span class="cal-val">54</span></div>
+        <div class="cal-item"><span><span class=ru>Йогурт греч.</span><span class=cn>希腊酸奶</span></span><span class="cal-val">59</span></div>
+        <div class="cal-item"><span><span class=ru>Творог 5%</span><span class=cn>乡村奶酪5%</span></span><span class="cal-val">98</span></div>
+        <div class="cal-item"><span><span class=ru>Сыр твердый</span><span class=cn>硬质奶酪</span></span><span class="cal-val">350</span></div>
+        <div class="cal-item"><span><span class=ru>Сметана 15%</span><span class=cn>酸奶油15%</span></span><span class="cal-val">160</span></div>
+        <div class="cal-item"><span><span class=ru>Сливоч. масло</span><span class=cn>黄油</span></span><span class="cal-val">717</span></div>
+      </div>
+      <div class="cal-cat"><div class="cal-cat-title"><span class=ru>🌰 Прочее</span><span class=cn>🌰 其他</span></div>
+        <div class="cal-item"><span><span class=ru>Миндаль</span><span class=cn>杏仁</span></span><span class="cal-val">579</span></div>
+        <div class="cal-item"><span><span class=ru>Грецкий орех</span><span class=cn>核桃</span></span><span class="cal-val">654</span></div>
+        <div class="cal-item"><span><span class=ru>Мед</span><span class=cn>蜂蜜</span></span><span class="cal-val">304</span></div>
+        <div class="cal-item"><span><span class=ru>Оливк. масло</span><span class=cn>橄榄油</span></span><span class="cal-val">884</span></div>
+        <div class="cal-item"><span><span class=ru>Гранола</span><span class=cn>格兰诺拉</span></span><span class="cal-val">180</span></div>
+        <div class="cal-item"><span><span class=ru>Авокадо</span><span class=cn>牛油果</span></span><span class="cal-val">160</span></div>
+      </div>
+    </div>
+  </div>
+</section>
 <section id="channels" class="sec">
   <div class="ct">
     <div class="fu" style="text-align:center">
